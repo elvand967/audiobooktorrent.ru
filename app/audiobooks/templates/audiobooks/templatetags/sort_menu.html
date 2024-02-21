@@ -1,0 +1,28 @@
+<!-- D:\Python\myProject\bookshelves\app\rating\templates\rating\templatetags\sort_menu.html -->
+
+<div class="sort-menu">
+    <ul>
+        {% for item in sort_ratings %}
+
+            {% if item.active == '0' %}
+                <li><i class="{{ item.class_i }}"></i>
+            {% else %}
+                <li class="active_label">
+                {% if item.active == '1' %}
+                    <i class="icon-circle-arrow-up"></i>
+                {% else %}
+                    <i class="icon-circle-arrow-down"></i>
+                {% endif %}
+            {% endif %}
+
+            {{ item.label }}
+
+            <ul>
+                <li><a href="{{ item.condition_url }}"><i class="icon-circle-xmark"></i> не сортировать</a></li>
+                <li><a href="{{ item.desc_url }}"><i class="icon-circle-arrow-down"></i> по убыванию</a></li>
+                <li><a href="{{ item.asc_url }}"><i class="icon-circle-arrow-up"></i> по возрастанию</a></li>
+            </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

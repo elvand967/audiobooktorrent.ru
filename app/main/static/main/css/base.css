@@ -1,0 +1,516 @@
+/* D:\Python\myProject\bookshelves\app\main\static\main\css\base.css */
+
+/* Reset styles */
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,
+p,
+blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,
+img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,
+dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,
+thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,
+header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,ul {
+  list-style: none;
+}
+
+blockquote,q {
+  quotes: none;
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*Цветовая колекция*/
+:root {
+  --color_fff: #fff;
+  --color01: #b47d48;
+  --color01_1: #DAA778;
+  --color01_2: #DAB592;
+  --color02: #5e210f;
+  --color03: #4e4131;
+  --color04: #723527;
+  --color05: #d9c2a1;
+  --color06: #83533d;
+  --color07: #7f706a;
+  --color08: #6e4c19;
+  --color09: #97451a;
+  --color10: #2b1508;
+
+  /* --основной цвет 11*/
+  --color11: #8f4935;
+  /* --основной цвет 12*/
+  --color12: #5D2211;
+  /* --контрастный цвет к 11-12*/
+  --contrasting11: #FAC78A;
+  /* --основной цвет 13*/
+  --color13: #AF5941;
+  /* --основной цвет 14*/
+  --color14: #AF705E;
+
+
+  /* --дополнительный цвет 21*/
+  --color21: #520D27;
+  /* --дополнительный цвет 22*/
+  --color22: #3D1725;
+  /* --дополнительный цвет 23*/
+  --color23: #350416;
+  /* --дополнительный цвет 24*/
+  --color24: #A83E66;
+  /* --дополнительный цвет 25*/
+  --color25: #A85B77;
+
+  --color_grad30: -webkit-gradient(linear, left top, left bottom, from(#5d2211), to(#97461a));
+  --color_grad31: -webkit-gradient(linear, left top, left bottom, from(#97461a), to(#5d2211));
+  --color_grad32: -webkit-gradient(linear, left top, left bottom, from(#9e371b), to(#723527));
+  --color_grad33: -webkit-gradient(linear, left top, left bottom, from(#723527), to(#b47d48));
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color10);
+  margin: 0;
+  /* Убрать отступы у body */
+  overflow-x: hidden;
+  /* Запретить горизонтальный скролл */
+}
+
+.wrapper {
+  height: 100%;
+  /* Высота блока с параллакс-эффектом в виде 100% от высоты окна браузера */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  /* overflow: hidden; Скрыть все, что не помещается в .wrapper */
+}
+
+.container {
+  margin: 0 auto;
+  padding: 150px 0 0 0;
+  max-width: 1120px;
+  min-height: 100%;
+}
+
+/* header styles */
+.header-container {
+  width: 100%;
+  padding: 10px;
+  background: var(--color_grad30);
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  box-sizing: border-box;
+}
+
+.main-logo {
+  width: 60px;
+  padding: 0 20px;
+}
+
+.nav_nav {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-bar {
+  display: none;
+}
+
+.nav_nav ul {
+  display: flex;
+  margin-right: 30px;
+}
+
+.header-link {
+  margin: 0 7px;
+  text-decoration: none;
+  color: var(--color05);
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.header-link:hover {
+  color: var(--color01);
+}
+
+/* Реализуем залипание header. Если прокрутка больше или равна его положения
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 1120px;
+  background-color: var(--color02);
+  z-index: 1000;
+}
+*/
+
+.content {
+  background: var(--color05);
+}
+
+.context {
+  min-height: 100%;
+  background: var(--color05);
+}
+
+
+.info_page{margin-bottom: 3em;text-align: justify;}
+.info_page h1{text-align: center}
+.info_page p{margin: 0.8em;}
+.info_page .img25{width:25%;height:100%;}
+.info_page .img30{width:30%;height:100%;}
+.info_page .img50{width:50%;height:100%;}
+.info_page .img100{width:100%;height:100%;overflow:hidden;}
+.img_left {
+    float: left; /* Выравнивание по левому краю */
+    margin: 0 1em 1em 0; /* Отступ справа и снизу */
+   }
+.img_right{
+    float: right; /* Выравнивание по правому краю */
+    margin: 0 0 1em 1em; /* Отступ снизу и слева */
+   }
+
+
+.footer {
+  width: 100%;
+  padding: 10px 30px 50px 30px;
+  color: var(--color05);
+  background: var(--color_grad30);
+    display: grid;
+    /* Будет создано 4 колонки */
+    grid-template-columns: repeat(4, 1fr);
+    /* Будет создано 4 ряда */
+    grid-template-rows: repeat(4, auto);
+    /* Отступы между рядами */
+    row-gap: 10px;
+    /* Отступы между колонками */
+    column-gap: 15px;
+    box-sizing: border-box;
+    grid-template-areas:
+        "r1c1 r1c2 r1c3 r1c4"
+        "r2c1 r2c1 r2c1 r2c1"
+        "r3c1 r3c1 r3c1 r3c1"
+        "r4c1 r4c1 r4c1 r4c1";
+}
+/* убираем подчеркивание текста ссылок */
+.footer a{
+    text-decoration: none;
+    color: var(--color05);
+}
+/* добавляем эффект при наведении */
+.footer a:hover {color: #FFF;}
+
+.r1c1{ grid-area: r1c1;}
+.r1c2{ grid-area: r1c2;}
+.r1c3{ grid-area: r1c3;}
+.r1c4{ grid-area: r1c4;}
+/* социальные сети */
+.r2c1{
+    grid-area: r2c1;
+    font-size: 1.8em;
+    letter-spacing: 0.4em;
+}
+
+.r3c1{grid-area: r3c1;}
+.r4c1{grid-area: r4c1;}
+
+.r2c1, .r3c1, .r4c1{
+    display: grid;
+    justify-items: center;
+}
+
+
+
+
+
+/* vvv--- Кнопка подробнее превью книги ---vvv */
+button {
+  border-radius: 6px;
+  color: #FFF;
+  background: var(--color_grad30);
+  border: none;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px;
+  min-width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+button:hover span {
+  padding-right: 25px;
+}
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* ^^^--- Кнопка подробнее превью книги ---^^^ */
+/* ^^^--- превью книг ---^^^ */
+
+
+
+
+
+.buttons_scroll {
+  display: none;
+  width: 100%;
+  max-width: 1120px;
+  height: 35px;
+  text-align: center;
+  background-color: var(--color02);
+  box-sizing: border-box;
+}
+
+.buttons_position {
+  position: fixed;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.buttons_scroll button {
+  text-align: center;
+  justify-content: center;
+  line-height: 50%;
+  color: var(--color05);
+  background: var(--color02);
+  font-size: 38px;
+  min-width: 50px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateY(-20px);
+  /* Поднимаем кнопку на 20px вверх */
+}
+
+.display_none {
+  display: none;
+}
+
+
+/* vvv--- Пагинатор ---vvv */
+.paginate {
+  text-align: center;
+  padding: 20px 0 40px 0;
+  background-color: var(--color05);
+}
+
+.paginate ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.paginate li {
+  display: inline-grid;
+}
+
+.paginate a {
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px;
+  margin: 1px 2px;
+  padding: 5px 10px;
+  display: inline-block;
+  border-top: 1px solid #fff;
+  text-decoration: none;
+  color: var(--color10);
+  text-shadow: white 0 1px 0;
+  background-color: #f5f5f5;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#eaeaea));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9f9f9', EndColorStr='#eaeaea');
+}
+
+.paginate a:first-child,
+.paginate a.first {
+  margin-left: 0;
+}
+
+.paginate a:last-child,
+.paginate a.last {
+  margin-right: 0;
+}
+
+.paginate a:hover,
+.paginate a:focus {
+  border-color: var(--color07);
+  background-color: var(--color07);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#fafafa));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fefefe', EndColorStr='#fafafa');
+}
+
+.paginate a.more {
+  box-shadow: 0 0 0 0 transparent;
+  border: 0 none;
+  background: transparent;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.paginate a.active {
+  box-shadow: rgba(0, 0, 0, 0.75) 0 0 0 0 inset;
+  border-color: #505050;
+  color: #f5f5f5;
+  text-shadow: black 0 1px 0;
+  background-color: var(--color07);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#5f5f5f), to(#5c5c5c));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#5f5f5f', EndColorStr='#5c5c5c');
+}
+/* ^^^--- Пагинатор ---^^^ */
+
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  /* border-bottom: 1px dotted #ccc; /* Если вам нужны точки под наводимым текстом */
+  color: var(--color05);
+  /* Цвет текста, в нашем случае "|" */
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  width: minmax(80px, 160px);
+  font-size: 14px;
+  letter-spacing: 0px;
+  /* убираем интепвал между буквами, наследованный от родителя */
+  text-transform: lowercase;
+  /* все в нижнем регистре */
+  background-color: var(--color01);
+  color: #FFF;
+  text-align: start;
+  padding: 5px;
+  border-radius: 6px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* подсказка справа */
+.tooltip-right {
+  top: -5px;
+  left: 125%;
+}
+
+.tooltip-right::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #555 transparent transparent;
+}
+
+/* подсказка снизу */
+.tooltip-bottom {
+  top: 135%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+/* уголок */
+.tooltip-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent var(--color01) transparent;
+}
+
+/* подсказка сверху */
+.tooltip-top {
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip-top::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* подсказка слева */
+.tooltip-left {
+  top: -5px;
+  bottom: auto;
+  right: 128%;
+}
+
+.tooltip-left::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #555;
+}

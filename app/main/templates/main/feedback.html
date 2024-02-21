@@ -1,0 +1,19 @@
+<!-- D:\Python\myProject\bookshelves\app\main\templates\main\feedback.html -->
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block head %}
+<link type="text/css" href="{% static 'main/css/feedback.css' %}" rel="stylesheet"/>
+{% endblock head %}
+
+{% block content %}
+<div></div>
+<form class="feedback" action="" method="post">
+    <h1>{{ title }}</h1>
+    {% csrf_token %}
+    <div class="feedback-form">
+        {{ form }}
+        <button type="submit">Отправить</button>
+    </div>
+</form>
+{% endblock content %}

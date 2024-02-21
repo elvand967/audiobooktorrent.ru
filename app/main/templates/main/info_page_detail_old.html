@@ -1,0 +1,51 @@
+<!-- D:\Python\myProject\audiobooktorrent.ru\app\main\templates\main\info_page_detail.html -->
+
+{% extends 'main/base.html' %}
+{% load static %}
+{% load audiobooks_tags %}
+{% load main_tags %}
+
+{% block head %}
+<link type="text/css" href="{% static 'audiobooks/css/audiobook_detail.css' %}" rel="stylesheet"/>
+{% endblock head %}
+
+{% block content %}
+<div class="context">
+    <section class="context_books">
+        <div class="substrate"></div>
+        <aside class="left_aside">
+            {% search_tag %}
+            <nav class="left_sidebar">
+                {% my_menu_catsubcat cat_sel=cat_sel subcat_sel=subcat_sel %}
+            </nav>
+            <div class="advertising_container">
+                <p>Рекламные блоки</p>
+            </div>
+        </aside>
+
+        <div class="slider_container">{% ring_slider_books %}</div>
+
+        <div class="sort_container"></div>
+
+        <main class="main_container">
+            <div class="info_page">
+                <h1>{{ infopage.title }}</h1>
+                {% for page in infopage.content_links.all %}
+                    {% if page.picture %}
+                    <div style="overflow: auto;">
+                        <img src="{{ page.picture.url }}" class="{{ page.image_position }} {{ page.image_width }}"/>
+                        {% if page.display_title %}
+                            <h2>{{ page.title }}</h2>
+                        {% endif %}
+                        {{ page.text|linebreaks }}
+                    </div>
+                {% else %}
+                {{ page.text|linebreaks }}
+                        {% endif %}
+                {% endfor %}
+            </div>
+        </main>
+    </section>
+</div>
+{% endblock content %}
+

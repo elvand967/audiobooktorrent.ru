@@ -1,0 +1,95 @@
+<!-- D:\Python\myProject\audiobooktorrent.ru\app\main\templates\main\templatetags\footer.html -->
+
+<div class="footer">
+    <div class="r1c1">
+        <ul>
+            {% for item in r1c1 %}
+            {% if item.internal_link %}
+            <li><a href="{% url item.internal_link %}" title="{{ item.title }}">{{ item.title }}</a></li>
+            {% else %}
+            {% if item.slug %}
+            <li><a href="{{ item.get_absolute_url }}" title="{{ item.title }}">{{ item.title }}</a></li>
+            {% else %}
+            <li>{{ item.title }}</li>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="r1c2">
+        <ul>
+            {% for item in r1c2 %}
+            {% if item.internal_link %}
+            <li><a href="{% url item.internal_link %}" title="{{ item.title }}">{{ item.title }}</a></li>
+            {% else %}
+            {% if item.slug %}
+            <li><a href="{{ item.get_absolute_url }}" title="{{ item.title }}">{{ item.title }}</a></li>
+            {% else %}
+            <li>{{ item.title }}</li>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="r1c3">
+        <ul>
+            {% for item in r1c3 %}
+            {% if item.internal_link %}
+            <li><a href="{% url item.internal_link %}" title="{{ item.title }}">{{ item.title }}</a></li>
+            {% else %}
+            {% if item.slug %}
+            <li><a href="{{ item.get_absolute_url }}" title="{{ item.title }}">{{ item.title }}</a></li>
+            {% else %}
+            <li>{{ item.title }}</li>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="r1c4">
+        <ul>
+            {% for item in r1c4 %}
+            {% if item.internal_link %}
+            <li><a href="{% url item.internal_link %}" title="{{ item.title }}">{{ item.title }}</a></li>
+            {% else %}
+            {% if item.slug %}
+            <li><a href="{{ item.get_absolute_url }}" title="{{ item.title }}">{{ item.title }}</a></li>
+            {% else %}
+            <li>{{ item.title }}</li>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="r2c1">
+        <p>
+            {% for item in r2c1 %}
+            <a href="{{ item.url }}" target="_blank" title="{{ item.title }}"><i class="{{ item.icon }}"></i></a>
+            {% endfor %}
+        </p>
+    </div>
+    <div class="r3c1">
+        {% for item in r3c1 %}
+        <p>
+            {% if item.internal_link %}
+                <a href="{% url item.internal_link %}" title="{{ item.title }}">
+                    {{ item.title }}</a>
+            {% else %}
+                {{ item.title }}
+            {% endif %}
+        </p>
+        {% endfor %}
+    </div>
+    <div class="r4c1">
+        {% for item in r4c1 %}
+        <p>
+            {% if item.internal_link %}
+                <a href="{% url item.internal_link %}" title="{{ item.title }}">
+                    {{ item.title }}</a>
+            {% else %}
+                {{ item.title }}
+            {% endif %}
+        </p>
+        {% endfor %}
+    </div>
+</div>
