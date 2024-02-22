@@ -95,7 +95,6 @@
                     <p>размер: {{ book.size }}</p>
                 </div>
                 {% show_ratings_preview book_ids=book.id %}
-                <!-- Кнопка для перехода на страницу audiobook_detail.html -->
                 <a href="{% url 'audiobook' book.slug %}">
                     <button class="button_preview"><span>Подробнее </span></button>
                 </a>

@@ -19,9 +19,11 @@
         {% endfor %}
 
         <button type="submit">Войти</button>
+        <div class="login-link">
+            <hr>
+            Нет аккаунта? <a href="{% url 'register' %}">Зарегистрироваться</a>
+        </div>
     </div>
-    <div class="login-link">
-        Нет аккаунта? <a href="{% url 'register' %}">Зарегистрироваться</a>
-    </div>
+
 </form>
 {% endblock %}

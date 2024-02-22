@@ -14,14 +14,24 @@
     {% csrf_token %}
     <div class="register-form">
         {% for field in form %}
-        {{ field.label_tag }}
-        {{ field }}
+            {% if field.name == 'familiarized' %}
+                {{ field }}
+               <span> {{ field.label_tag }}<br>
+                   <a href="{{ '/main/infopage/politika-konfidencialnosti/' }}">Политикой конфиденциальности</a><br>
+                   <a href="{{ '/main/infopage/polzovatelskoe-soglashenie/' }}">Пользовательским соглашением</a>
+               </span>
+            {% else %}
+                {{ field.label_tag }}
+                {{ field }}
+            {% endif %}
         {% endfor %}
 
         <button type="submit">Зарегистрироваться</button>
+        <div class="login-link">
+            <hr>
+            Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a>
+        </div>
     </div>
-    <div class="login-link">
-        Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a>
-    </div>
+
 </form>
 {% endblock %}

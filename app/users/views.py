@@ -1,4 +1,4 @@
-# D:\Python\myProject\bookshelves\app\users\views.py
+# D:\Python\myProject\audiobooktorrent.ru\app\users\views.py
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, update_session_auth_hash
